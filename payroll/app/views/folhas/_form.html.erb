@@ -11,35 +11,58 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :verba %><br>
-    <%= f.text_field :verba %>
-  </div>
+  <div class="container">
 
+    <div class="row inline">
+      <div class="col-md-6 inline">
+        <div class="form-group inline">
+          <div>
+            <%= f.label :Nome %><br>
+            <%= f.text_field :nome %>
+          </div>
+          <div>
+            <%= f.label :Verba %><br>
+            <%= f.number_field :verba %>
+          </div>
+          <div>
+            <%= f.label :Funcionarios %><br>
+            <%= f.number_field :funcionarios %>
+          </div>
+        </div>
 
-  <h2>Funcionários</h2>
-  <%= f.fields_for :funcionarios do |funcionarios| %>
-    <div class="funcionarios_fields">
-      <div class="field">
-        <%= funcionarios.label :nome %><br>
-        <%= funcionarios.text_field :nome %>
-      </div>
-      <div class="field">
-        <%= funcionarios.label :idade %><br>
-        <%= funcionarios.number_field :idade %>
-      </div>
-      <div class="field">
-        <%= funcionarios.label :salario %><br>
-        <%= funcionarios.number_field :salario %>
       </div>
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Funcionários</h2>
+        <%= f.fields_for :funcionarios do |funcionarios| %>
+          <div class="funcionarios_fields">
+            <div class="field">
+              <%= funcionarios.label :Nome %><br>
+              <%= funcionarios.text_field :nome %>
+            </div>
+            <div class="field">
+              <%= funcionarios.label :Idade %><br>
+              <%= funcionarios.number_field :idade %>
+            </div>
+            <div class="field">
+              <%= funcionarios.label :Salário %><br>
+              <%= funcionarios.number_field :salario %>
+            </div>
+          </div>
+          <div class="actions">
+            <%= funcionarios.submit %>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
   </div>
+
 <% end %>
