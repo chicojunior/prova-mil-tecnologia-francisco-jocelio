@@ -1,0 +1,45 @@
+<%= form_for(@folha) do |f| %>
+  <% if @folha.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@folha.errors.count, "error") %> prohibited this folha from being saved:</h2>
+
+      <ul>
+      <% @folha.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :verba %><br>
+    <%= f.text_field :verba %>
+  </div>
+
+
+  <h2>Funcionários</h2>
+  <%= f.fields_for :funcionarios do |funcionarios| %>
+    <div class="funcionarios_fields">
+      <div class="field">
+        <%= funcionarios.label :nome %><br>
+        <%= funcionarios.text_field :nome %>
+      </div>
+      <div class="field">
+        <%= funcionarios.label :idade %><br>
+        <%= funcionarios.number_field :idade %>
+      </div>
+      <div class="field">
+        <%= funcionarios.label :salario %><br>
+        <%= funcionarios.number_field :salario %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

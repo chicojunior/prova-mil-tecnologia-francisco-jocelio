@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: payroll_dev
+  username: postgres
+  password: postgres
+  host: localhost
+
+# test:
+#   <<: *default
+#   database: payroll_test
+#   username: postgres
+#   password: postgres
+#   host: localhost
+
+# production:
+#   <<: *default
+#   database: payroll_prd
+#   username: postgres
+#   password: <%= ENV['PAYROLL_DATABASE_PASSWORD'] %>

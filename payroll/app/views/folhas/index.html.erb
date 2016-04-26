@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Folhas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Verba</th>
+      <th>Funcionarios</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @folhas.each do |folha| %>
+      <tr>
+        <td><%= folha.nome %></td>
+        <td><%= folha.verba %></td>
+        <td><%= folha.funcionarios %></td>
+        <td><%= link_to 'Show', folha %></td>
+        <td><%= link_to 'Edit', edit_folha_path(folha) %></td>
+        <td><%= link_to 'Destroy', folha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Folha', new_folha_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  verba: 9.99
+  funcionarios: 1
+
+two:
+  nome: MyString
+  verba: 9.99
+  funcionarios: 1

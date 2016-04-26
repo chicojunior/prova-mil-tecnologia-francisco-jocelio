@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @folha.nome %>
+</p>
+
+<p>
+  <strong>Verba:</strong>
+  <%= @folha.verba %>
+</p>
+
+<p>
+  <strong>Funcionarios:</strong>
+  <%= @folha.funcionarios %>
+</p>
+
+<%= link_to 'Edit', edit_folha_path(@folha) %> |
+<%= link_to 'Back', folhas_path %>
